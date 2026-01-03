@@ -55,15 +55,12 @@
 }
 
 .navBtn:hover {
-  background-color: #a00;
+  background-color: #000;
   color: white;
 }
 
 .navBtn.active {
-  background-color: #d0d0d0;
-  /* Slightly darker for active state if needed, or mapped to specific color */
-  background-color: #a00;
-  /* Let's use red for active to match the 'me' button in mockup if it was active */
+  background-color: #000;
   color: white;
 }
 
