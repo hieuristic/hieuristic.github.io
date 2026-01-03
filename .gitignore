@@ -14,3 +14,7 @@
 *.png
 *.PNG
 !copyright.png
+!globe/assets/*.jpg
+!globe/assets/*.jpeg
+!globe/assets/*.png
+!globe/assets/*.avif
