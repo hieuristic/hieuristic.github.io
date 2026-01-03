@@ -18,13 +18,14 @@ const ZOOM_SPEED = 2.0; // Transition speed
 // Point of interest (latitude, longitude in radians) - Default: Hanoi, Vietnam
 let POI_LAT = 21.0285 * Math.PI / 180;
 let POI_LON = 105.8542 * Math.PI / 180;
+let hasUserLocation = false;
 
 // Get current location if available
 if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition((position) => {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
-        console.log(`Current location: Lat ${lat}, Lon ${lon}`);
+        hasUserLocation = true;
 
         // Update POI to current location
         POI_LAT = lat * Math.PI / 180;
@@ -32,8 +33,6 @@ if ("geolocation" in navigator) {
     }, (error) => {
         console.warn("Geolocation access denied or failed:", error.message);
     });
-} else {
-    console.log("Geolocation is not supported by this browser.");
 }
 
 // Shape mode
@@ -509,6 +508,13 @@ async function main() {
 
         zoomButton.addEventListener('click', () => {
             zoomIn = !zoomIn;
+            if (zoomIn) {
+                if (hasUserLocation) {
+                    console.log(`Zooming in to current location: Lat ${(POI_LAT * 180 / Math.PI).toFixed(4)}, Lon ${(POI_LON * 180 / Math.PI).toFixed(4)}`);
+                } else {
+                    console.log("Zooming in to default location: Hanoi, Vietnam");
+                }
+            }
         });
 
         // Shape toggle button
