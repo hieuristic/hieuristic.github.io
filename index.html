@@ -32,20 +32,71 @@
         <div class="top">
           <div class="left">
             <div class="socialCon">
-              <a href="/" class="icon">
+              <a href="javascript:void(0)" class="icon" id="meBtn">
                 <img alt='me-icon' src='assets/icons/me.svg' />
               </a>
-              <a href="https://letterboxd.com/hieuristics/" class="icon">
+              <a href="javascript:void(0)" class="icon" id="globeBtn">
                 <img alt='globe-icon' src='assets/icons/globe.svg' />
               </a>
             </div>
 
-            <div class="profileImage">
-              <img src="/assets/images/charlie.webp" alt="me" />
+            <div id="profileContainer" style="display: flex; flex-direction: column; width: 100%;">
+              <div class="profileImage" id="profileSlot">
+                <img src="/assets/images/charlie.webp" alt="me" />
+              </div>
+              <div id="nameSection"
+                style="height: 4rem; display: flex; flex-direction: column; justify-content: center; gap: 0.2rem;">
+                <div class="profileName" style="font-weight: 300;">
+                  Nguyen Minh Hieu
+                </div>
+                <div class="profileName" style="font-weight: 600; color: #a00; font-style:italic">
+                  "Charlie"
+                </div>
+              </div>
             </div>
-            <div class="profileName">
-              Nguyen Minh Hieu (Charlie)
-            </div>
+            <script>
+              (function () {
+                const profileSlot = document.getElementById('profileSlot');
+                const nameSection = document.getElementById('nameSection');
+                const originalContent = profileSlot.innerHTML;
+
+                function setMode(isGlobe) {
+                  if (isGlobe) {
+                    nameSection.style.display = 'none';
+                    profileSlot.style.height = '22rem';
+                    profileSlot.innerHTML = `<iframe src="globe/index.html" 
+                      style="width: 100%; height: 100%; border: none; border-radius: 0.6rem; display: block;"
+                      title="Globe demo"
+                      allow="webgpu"></iframe>`;
+                  } else {
+                    nameSection.style.display = 'flex';
+                    profileSlot.style.height = '18rem';
+                    profileSlot.innerHTML = originalContent;
+                  }
+                }
+
+                document.getElementById('globeBtn').addEventListener('click', async () => {
+                  if (navigator.gpu) {
+                    try {
+                      const adapter = await navigator.gpu.requestAdapter();
+                      if (adapter) {
+                        setMode(true);
+                      } else {
+                        alert("WebGPU is not supported or enabled in your browser.");
+                      }
+                    } catch (e) {
+                      console.error("WebGPU initialization failed", e);
+                    }
+                  } else {
+                    alert("WebGPU is not supported in this browser.");
+                  }
+                });
+
+                document.getElementById('meBtn').addEventListener('click', () => {
+                  setMode(false);
+                });
+              })();
+            </script>
           </div>
           <div class="right">
             <div class="socialCon">
@@ -70,7 +121,8 @@
               <div class="para paraIntro selected" id="introEn">
                 Hello!
                 <br>
-                I'm currently a research engineer at <a href="https://netropy.ai">Netropy</a> in Seoul, South Korea.
+                I'm currently a founding engineer at <a href="https://coolant.earth">Coolant</a>, a Spaial AI company
+                based in SF.
                 I obtained my BSc in Computer Science and Electrical Engineering at <a
                   href="https://kaist.ac.kr/">KAIST</a>.
                 Previously, I was doing research under Professor <a href="https://mhsung.github.io/">Minhyuk Sung</a>

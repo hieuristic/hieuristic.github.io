@@ -36,11 +36,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  height: 18rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .profileImage img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 0.6rem;
 }
 
@@ -49,7 +54,6 @@
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  padding-top: 0.5rem;
   color: var(--col-text);
 }
 
@@ -105,7 +109,8 @@ iframe {
     padding: 0;
   }
 
-  img {
+  img,
+  iframe {
     width: 50%;
   }
 }
@@ -275,12 +280,6 @@ iframe {
   gap: 1rem;
 }
 
-.projText {}
-
-.projImage {}
-
-.projTitle {}
-
 .bibCard {
   min-height: fit-content;
   display: flex;
@@ -352,10 +351,6 @@ iframe {
   color: var(--col-text);
   gap: 0.3rem;
 }
-
-.bibYear {}
-
-.bibPublisher {}
 
 .bibCon {
   overflow: hidden;
@@ -507,9 +502,7 @@ iframe {
     flex-direction: column;
   }
 
-  .indexMain {
-    /* padding-bottom: 25vh; */
-  }
+
 
   .icon img {
     width: 8vmin;
