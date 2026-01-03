@@ -397,10 +397,10 @@ fn fs_main(@location(0) uv: vec2f) -> @location(0) vec4f {
 async function main() {
     try {
         const device = await engine.init();
-        const texture = await engine.loadTexture('assets/earth_texture.jpeg');
+        const texture = await engine.loadTexture('assets/earth_texture.avif');
         const specularTexture = await engine.loadTexture('assets/earth_texture_specular.avif');
-        const nightTexture = await engine.loadTexture('assets/earth_night_texture.jpg');
-        const heightTexture = await engine.loadTexture('assets/earth_height_texture.png');
+        const nightTexture = await engine.loadTexture('assets/earth_night_texture.avif');
+        const heightTexture = await engine.loadTexture('assets/earth_height_texture.avif');
         const sampler = engine.createSampler({
             addressModeU: 'repeat',
             addressModeV: 'clamp-to-edge',
