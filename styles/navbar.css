@@ -60,8 +60,12 @@
 }
 
 .navBtn.active {
-  background-color: #000;
+  background-color: #a00;
   color: white;
+}
+
+.navBtn.active:hover {
+  background-color: #a00;
 }
 
 
