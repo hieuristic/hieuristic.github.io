@@ -477,13 +477,12 @@ async function main() {
         zoomButton.style.cssText = `
             position: absolute; 
             top: 20px; 
-            left: calc(50% + 25px); 
-            transform: translateX(-50%);
-            width: 40px; 
-            height: 40px; 
+            left: calc(50% + 0.25rem); 
+            width: 1.5rem; 
+            height: 1.5rem; 
             cursor: pointer; 
-            background: #111; 
-            border: 1px solid #fff; 
+            background: #505050; 
+            border: none; 
             margin: 0; 
             padding: 0; 
             display: flex; 
@@ -502,10 +501,10 @@ async function main() {
         }
 
         zoomButton.addEventListener('mouseenter', () => {
-            zoomButton.style.background = '#222';
+            zoomButton.style.background = '#666';
         });
         zoomButton.addEventListener('mouseleave', () => {
-            zoomButton.style.background = '#111';
+            zoomButton.style.background = '#505050';
         });
 
         zoomButton.addEventListener('click', () => {
@@ -518,13 +517,12 @@ async function main() {
         shapeButton.style.cssText = `
             position: absolute; 
             top: 20px; 
-            left: calc(50% - 25px); 
-            transform: translateX(-50%);
-            width: 40px; 
-            height: 40px; 
+            left: calc(50% - 1.75rem); 
+            width: 1.5rem; 
+            height: 1.5rem; 
             cursor: pointer; 
-            background: #111; 
-            border: 1px solid #fff; 
+            background: #505050; 
+            border: none; 
             margin: 0; 
             padding: 0; 
             display: flex; 
@@ -546,10 +544,10 @@ async function main() {
         }
 
         shapeButton.addEventListener('mouseenter', () => {
-            shapeButton.style.background = '#222';
+            shapeButton.style.background = '#666';
         });
         shapeButton.addEventListener('mouseleave', () => {
-            shapeButton.style.background = '#111';
+            shapeButton.style.background = '#505050';
         });
 
         shapeButton.addEventListener('click', () => {
