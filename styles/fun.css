@@ -42,7 +42,7 @@
   align-items: center;
   text-align: left;
   font-size: 1.5rem;
-  font-family: "Vollkorn";
+  font-family: "Inter";
   font-weight: 700;
   color: var(--col-text);
 }
@@ -60,12 +60,14 @@
   .funCon {
     width: 100%;
   }
+
   .funCard {
     flex-direction: column;
     height: fit-content;
     padding: 1.5rem 1.5rem;
   }
+
   .funCardThumbnail {
-    width:100%;
+    width: 100%;
   }
 }

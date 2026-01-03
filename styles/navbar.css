@@ -27,37 +27,46 @@
 
 .navBtnCon {
   display: flex;
-  gap: calc(var(--nav-height) / 5);
+  gap: 1rem;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   z-index: 2;
 }
 
 .navBtn {
-  border-style: solid;
-  /* border-radius: 0.7rem; */
-  border-color: transparent;
+  border: none;
   width: fit-content;
-  height: calc(var(--nav-height) * 0.3);
+  height: fit-content;
   display: block;
   cursor: pointer;
   user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(var(--nav-height) * 0.2);
+  font-size: 0.9rem;
   font-family: var(--font-mono);
   font-weight: 400;
-  padding: 0.8rem 0.6rem;
-  margin: 0 0.2rem;
+  padding: 0.4rem 1.2rem;
+  margin: 0;
   color: var(--col-text);
-
+  background-color: #e0e0e0;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .navBtn:hover {
-  background-color: #d9d9d9;
-  /* backdrop-filter: invert(10%); */
+  background-color: #a00;
+  color: white;
 }
+
+.navBtn.active {
+  background-color: #d0d0d0;
+  /* Slightly darker for active state if needed, or mapped to specific color */
+  background-color: #a00;
+  /* Let's use red for active to match the 'me' button in mockup if it was active */
+  color: white;
+}
+
 
 .navTogBtn {
   display: none;
@@ -67,6 +76,7 @@
   .navBtn {
     font-size: 1rem;
   }
+
   .navBtnCon {
     gap: 0.5rem;
   }

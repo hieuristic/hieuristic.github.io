@@ -25,20 +25,21 @@
 }
 
 .footerRight {
-  align-text: left;
   user-select: none;
   -webkit-user-select: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: right;
 }
 
-.footerLeft {
-}
+.footerLeft {}
 
 .footerLink {
   display: flex;
   flex-direction: row;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 
 @media only screen and (max-width: 768px) {

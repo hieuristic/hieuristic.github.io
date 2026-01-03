@@ -1,23 +1,22 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Roboto+Mono&family=Vollkorn&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
 
-@font-face {
-}
+@font-face {}
 
 :root {
-  --col-text:    #000;
-  --col-dark:    #000;
-  --col-bg:      #fff;
-  --col-accent:  #fff;
-  --col-fade:    #d9d9d9;
+  --col-text: #000;
+  --col-dark: #000;
+  --col-bg: #fff;
+  --col-accent: #fff;
+  --col-fade: #d9d9d9;
 
-  --nav-height:   5rem;
+  --nav-height: 5rem;
 
-  --font-mono:    'Roboto Mono', monospace;
-  --font-code:    'Roboto Mono', monospace;
-  --font-wide:    'Vollkorn', sans-serif;
-  --font-thin:    'Roboto', sans-serif;
-  --font-serif:   'Vollkorn' , sans-serif;
+  --font-mono: 'Inter', sans-serif;
+  --font-code: 'Inter', sans-serif;
+  --font-wide: 'Inter', sans-serif;
+  --font-thin: 'Inter', sans-serif;
+  --font-serif: 'Inter', sans-serif;
 
   --fsize: 1rem;
   --fsizesmall: 0.8rem;
@@ -44,6 +43,7 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+
   /* For mobile phones: */
   :root {
     --nav-height: 5rem;
