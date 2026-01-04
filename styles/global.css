@@ -1,14 +1,15 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Roboto+Mono&family=Vollkorn&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
 
-@font-face {}
+
 
 :root {
-  --col-text: #000;
-  --col-dark: #000;
-  --col-bg: #fff;
-  --col-accent: #fff;
-  --col-fade: #d9d9d9;
+  --col-text: #e0e0e0;
+  --col-dark: #fff;
+  --col-bg: #0a0a0a;
+  --col-accent: #1a1a1a;
+  --col-fade: #333333;
+  --col-red: #f33;
 
   --nav-height: 5rem;
 
@@ -28,12 +29,14 @@ html,
 body {
   padding: 0;
   margin: 0;
+  background-color: var(--col-bg);
+  color: var(--col-text);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
-  color: #a00;
+  color: var(--col-red);
   text-decoration: none;
   cursor: pointer;
 }

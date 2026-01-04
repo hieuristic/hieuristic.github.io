@@ -44,7 +44,8 @@
   gap: 1.25rem;
   padding: 1rem;
   margin: 1rem 0;
-  background: #eee;
+  background: var(--col-accent);
+  color: var(--col-text);
   font-size: 1rem;
 }
 
@@ -56,6 +57,7 @@
 
 .licenseEntryHead {
   font-weight: 700;
+  color: var(--col-dark);
 }
 
 .licenseEntryTail {

@@ -27,7 +27,7 @@ canvas {
 .downBtn {
   padding: .3rem .5rem;
   font-size: 1rem;
-  background: #a00;
+  background: var(--col-red);
   color: white;
   font-family: "Inter";
   border-radius: .4rem;
@@ -48,7 +48,7 @@ canvas {
 }
 
 .divisor {
-  background: #dadada;
+  background: var(--col-fade);
   height: 2px;
   width: 100%;
 }
@@ -86,7 +86,7 @@ canvas {
 }
 
 .cvEntryHeaderRight {
-  color: #949494;
+  color: #888;
 }
 
 .cvEntryDetails ul {

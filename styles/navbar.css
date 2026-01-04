@@ -4,9 +4,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 1;
 }
 
@@ -50,8 +50,8 @@
   padding: 0.4rem 1.2rem;
   margin: 0;
   color: var(--col-text);
-  background-color: #e0e0e0;
-  transition: background-color 0.2s, color 0.2s;
+  background-color: #222;
+  transition: all 0.2s ease;
 }
 
 .navBtn:hover {
@@ -60,12 +60,12 @@
 }
 
 .navBtn.active {
-  background-color: #a00;
+  background-color: var(--col-red);
   color: white;
 }
 
 .navBtn.active:hover {
-  background-color: #a00;
+  background-color: var(--col-red);
 }
 
 

@@ -21,7 +21,7 @@
 .funCard:hover {
   transform: scale(1.05);
   transition: transform 0.25s;
-  background: #f0f0f0;
+  background: var(--col-accent);
 }
 
 .funCardThumbnail {
@@ -52,7 +52,7 @@
   font-family: 'Inter';
   font-weight: 200;
   line-height: 1.1rem;
-  color: #000;
+  color: var(--col-text);
   line-height: calc(var(--fsize)* 1.3);
 }
 
