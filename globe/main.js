@@ -495,7 +495,7 @@ async function main() {
         const showUI = urlParams.get('ui') !== 'hide';
 
         if (showUI) {
-            zoomButton.innerHTML = `<img src="assets/mappin.svg" style="width: 70%; height: 70%; object-fit: contain;">`;
+            zoomButton.innerHTML = `<img src="assets/map-pin.svg" style="width: 70%; height: 70%; object-fit: contain;">`;
             document.body.appendChild(zoomButton);
         }
 
@@ -541,7 +541,7 @@ async function main() {
 
         const updateShapeIcon = () => {
             const nextShape = (shapeIndex + 1) % 3;
-            const icons = ['sphere.svg', 'cube.svg', 'torus.svg'];
+            const icons = ['circle.svg', 'box.svg', 'torus.svg'];
             shapeButton.innerHTML = `<img src="assets/${icons[nextShape]}" style="width: 70%; height: 70%; object-fit: contain;">`;
         };
         if (showUI) {
