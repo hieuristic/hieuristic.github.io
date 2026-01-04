@@ -417,8 +417,8 @@ iframe {
 
 .icon {
   cursor: pointer;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 1.75rem;
+  height: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: center;

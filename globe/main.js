@@ -477,8 +477,8 @@ async function main() {
             position: absolute; 
             top: 20px; 
             left: calc(50% + 0.25rem); 
-            width: 2.25rem; 
-            height: 2.25rem; 
+            width: 1.75rem; 
+            height: 1.75rem; 
             cursor: pointer; 
             background: #222; 
             border: none; 
@@ -523,9 +523,9 @@ async function main() {
         shapeButton.style.cssText = `
             position: absolute; 
             top: 20px; 
-            left: calc(50% - 2.5rem); 
-            width: 2.25rem; 
-            height: 2.25rem; 
+            left: calc(50% - 2rem); 
+            width: 1.75rem; 
+            height: 1.75rem; 
             cursor: pointer; 
             background: #222; 
             border: none; 
