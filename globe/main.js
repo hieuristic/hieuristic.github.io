@@ -477,13 +477,13 @@ async function main() {
             position: absolute; 
             top: 20px; 
             left: calc(50% + 0.25rem); 
-            width: 1.5rem; 
-            height: 1.5rem; 
+            width: 2.25rem; 
+            height: 2.25rem; 
             cursor: pointer; 
-            background: #505050; 
+            background: #222; 
             border: none; 
             margin: 0; 
-            padding: 0; 
+            padding: 0.2rem; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
@@ -495,15 +495,15 @@ async function main() {
         const showUI = urlParams.get('ui') !== 'hide';
 
         if (showUI) {
-            zoomButton.innerHTML = `<img src="assets/map-pin.svg" style="width: 70%; height: 70%; object-fit: contain;">`;
+            zoomButton.innerHTML = `<img src="assets/map-pin.svg" style="width: 70%; height: 70%; object-fit: contain; filter: brightness(0) invert(1);">`;
             document.body.appendChild(zoomButton);
         }
 
         zoomButton.addEventListener('mouseenter', () => {
-            zoomButton.style.background = '#666';
+            zoomButton.style.background = '#000';
         });
         zoomButton.addEventListener('mouseleave', () => {
-            zoomButton.style.background = '#505050';
+            zoomButton.style.background = '#222';
         });
 
         zoomButton.addEventListener('click', () => {
@@ -523,14 +523,14 @@ async function main() {
         shapeButton.style.cssText = `
             position: absolute; 
             top: 20px; 
-            left: calc(50% - 1.75rem); 
-            width: 1.5rem; 
-            height: 1.5rem; 
+            left: calc(50% - 2.5rem); 
+            width: 2.25rem; 
+            height: 2.25rem; 
             cursor: pointer; 
-            background: #505050; 
+            background: #222; 
             border: none; 
             margin: 0; 
-            padding: 0; 
+            padding: 0.2rem; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
@@ -542,7 +542,7 @@ async function main() {
         const updateShapeIcon = () => {
             const nextShape = (shapeIndex + 1) % 3;
             const icons = ['circle.svg', 'box.svg', 'torus.svg'];
-            shapeButton.innerHTML = `<img src="assets/${icons[nextShape]}" style="width: 70%; height: 70%; object-fit: contain;">`;
+            shapeButton.innerHTML = `<img src="assets/${icons[nextShape]}" style="width: 70%; height: 70%; object-fit: contain; filter: brightness(0) invert(1);">`;
         };
         if (showUI) {
             updateShapeIcon();
@@ -550,10 +550,10 @@ async function main() {
         }
 
         shapeButton.addEventListener('mouseenter', () => {
-            shapeButton.style.background = '#666';
+            shapeButton.style.background = '#000';
         });
         shapeButton.addEventListener('mouseleave', () => {
-            shapeButton.style.background = '#505050';
+            shapeButton.style.background = '#222';
         });
 
         shapeButton.addEventListener('click', () => {
