@@ -1,270 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
-  <title>Hieu's CV</title>
-  <meta name="description" content="Welcome to Charlie's Homepage!">
-  <link rel="stylesheet" href="styles/global.css" />
-  <link rel="stylesheet" href="styles/navbar.css" />
-  <link rel="stylesheet" href="styles/footer.css" />
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="styles/cv.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hieu's Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KC5SMZ8FY3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'G-KC5SMZ8FY3');
-</script>
-
 <body>
-  <div class="mainCon" style="padding-bottom: 10vh">
-    <div class="contentCon" style="padding-top: 5vh">
-      <div id="cvName">
-        Nguyen Minh Hieu
-      </div>
-      <div class="cvInfo">
-        Software Engineer specialized in Spatial Computing and Computer Graphics
-      </div>
-      <div id="cvContact">
-        <a>hieuristics [at] gmail.com</a>
-      </div>
-      <br />
-      <div class="cvSection">
-        <div class="cvSectionHeader">
-          Education
-        </div>
-        <div class="divisor"></div>
-        <div class="cvEntry">
-          <div class="cvEntryHeader">
-            <div class="cvEntryHeaderLeft">
-              <div class="cvEntryInstitute">
-                Korea Advanced Institute of Science and Technology (KAIST)
-              </div>
-              <div class="cvEntryPosition">
-                BSc in Computer Science and Electrical Engineering
-              </div>
-            </div>
-            <div class="cvEntryHeaderRight">
-              <div>Feb 2021 - Aug 2024</div>
-              <div>Daejeon, South Korea</div>
-            </div>
-          </div>
-          <div class="cvEntryDetails">
-          </div>
-        </div>
-      </div>
-
-      <div class="cvSection">
-        <div class="cvSectionHeader">
-          Industry Experiences
-        </div>
-        <div class="divisor"></div>
-        <!-- <div class="cvEntry"> -->
-        <!--   <div class="cvEntryHeader"> -->
-        <!--     <div class="cvEntryHeaderLeft"> -->
-        <!--       <div class="cvEntryInstitute"> -->
-        <!--         Coolant Inc. -->
-        <!--       </div> -->
-        <!--       <div class="cvEntryPosition"> -->
-        <!--         Founding Engineer • 3D Reconstruction, Metrology, and Analysis -->
-        <!--       </div> -->
-        <!--     </div> -->
-        <!--     <div class="cvEntryHeaderRight"> -->
-        <!--       <div>Present</div> -->
-        <!--       <div>Hanoi, Vietnam</div> -->
-        <!--     </div> -->
-        <!--   </div> -->
-        <!--   <div class="cvEntryDetails"> -->
-        <!--     <ul> -->
-        <!--       <li> -->
-        <!--         Working on high-precision reconstruction and analysis of large forests. -->
-        <!--       </li> -->
-        <!--     </ul> -->
-        <!--   </div> -->
-        <!-- </div> -->
-        <div class="cvEntry">
-          <div class="cvEntryHeader">
-            <div class="cvEntryHeaderLeft">
-              <div class="cvEntryInstitute">
-                Netropy Inc.
-              </div>
-              <div class="cvEntryPosition">
-                Research Engineer • 3D Reconstruction
-              </div>
-            </div>
-            <div class="cvEntryHeaderRight">
-              <div>Oct 2024 - Sep 2025</div>
-              <div>Seoul, South Korea</div>
-            </div>
-          </div>
-          <div class="cvEntryDetails">
-            <ul>
-              <li>
-                Developed robust large scale 3D reconstruction methods for
-                robotics simulation.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="cvEntry">
-          <div class="cvEntryHeader">
-            <div class="cvEntryHeaderLeft">
-              <div class="cvEntryInstitute">
-                StoneLab
-              </div>
-              <div class="cvEntryPosition">
-                Machine Learning Research Intern • 3D Machine Learning
-              </div>
-            </div>
-            <div class="cvEntryHeaderRight">
-              <div>Mar 2024 - Jun 2024</div>
-              <div>Seoul, South Korea</div>
-            </div>
-          </div>
-          <div class="cvEntryDetails">
-            <ul>
-              <li>
-                Developed 3D Adaptive Shell for accelarated segmentation and classification on
-                CT-Scans.
-              </li>
-              <li>
-                Researched on the Inverse Diffusion Model for Medical Imaging
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="cvEntry">
-          <div class="cvEntryHeader">
-            <div class="cvEntryHeaderLeft">
-              <div class="cvEntryInstitute">
-                Steinfeld Co.
-              </div>
-              <div class="cvEntryPosition">
-                Software Engineer Intern • Visualization and Geometry Processing
-              </div>
-            </div>
-            <div class="cvEntryHeaderRight">
-              <div>Jun 2022 - Aug 2022</div>
-              <div>Seoul, South Korea</div>
-            </div>
-          </div>
-          <div class="cvEntryDetails">
-            <ul>
-              <li>
-                Developed Bézier curve editing algorithm and tools on surface meshes of dental crowns.
-              </li>
-              <li>
-                Developed Surface Editing and Deformation for dental crowns.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="cvSection">
-        <div class="cvSectionHeader">
-          Research Experiences
-        </div>
-        <div class="divisor"></div>
-
-        <div class="cvEntry">
-          <div class="cvEntryHeader">
-            <div class="cvEntryHeaderLeft">
-              <div class="cvEntryInstitute">
-                KAIST Visual AI Lab
-              </div>
-              <div class="cvEntryPosition">
-                Assistant Researcher advised by Prof. <a href="https://mhsung.github.io/">Minhyuk Sung</a>
-              </div>
-            </div>
-            <div class="cvEntryHeaderRight">
-              <div>Jun 2022 - Sep 2024</div>
-              <div>Daejeon, South Korea</div>
-            </div>
-          </div>
-          <div class="cvEntryDetails">
-            <ul>
-              <li>Developed sparse Neural Radiance Field reconstruction with CLIP regularization loss.
-              </li>
-              <li>Published a paper in ICCV 2023 on Latent Diffusion for shape generation and manipulation: Worked
-                on network architecture design, diffusion formulation, and implemented text-based editing.
-              </li>
-              <li>Published a paper in Neurips 2024 on Cylinder Extrusion CAD model from Multi-view Images: Led the
-                implementation of the main method and optimal surface extraction from the neural edge field.
-              </li>
-              <li>
-                Worked human motion diffusion interpolation via hyperpherical splines.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="cvSection">
-        <div class="cvSectionHeader">
-          Skills
-        </div>
-        <div class="divisor"></div>
-        <div class="cvSkill">
-          <div class="cvSkillEntry">
-            <strong>Languages</strong>: C++, Python, CUDA, Shader Slang, GLSL
-            <br>
-            <strong>Frameworks</strong>: PyTorch, OpenGL, Vulkan
-          </div>
-        </div>
-      </div>
-    </div>
+  <div><a href="/">◀ back</a></div>
+  <br>
+  <div>
+    <h3><b>Nguyen Minh Hieu</b></h3>
+  </div>
+  <div>
+    Software Engineer specialized in 3D Vision and Computer Graphics
   </div>
 
-  <div class="navBar">
-    <div class="navCon">
-      <div class="navBg"></div>
-      <div class="navBtnCon">
-        <a rel="prefetch" href="/" class='navBtn'>
-          me
-        </a>
-        <a rel="prefetch" href="/cv.html" class='navBtn active'>
-          cv
-        </a>
-        <a rel="prefetch" href="/fun/" class='navBtn'>
-          fun
-        </a>
-        <a rel="prefetch" href="/blog/" class='navBtn'>
-          txt
-        </a>
-      </div>
-    </div>
+  <br><br>
+
+  <div>
+    <h3><b>Education</b></h3>
+    <br>
+    <div>Mar 1, 2021 to Aug 31, 2024</div>
+    <div><b>BSc in Computer Science (double major in Electrical Engineering)</b></div>
+    <div><a href="">KAIST</a>, South Korea</div>
   </div>
 
-  <div class="footer">
-    <div class="footerMainCon">
-      <div class="footerCon">
-        <div class="fLeft">
-          Copyright © 2018-2026 <br> Nguyen Minh Hieu
-        </div>
-        <div class="footerRight">
-          <div class="footerLink">
-            <a href="/" title="me"><img class="footerIcon" src="/assets/icons/user.svg" alt="me" /></a>
-            <a href="/cv.html" title="cv"><img class="footerIcon" src="/assets/icons/clipboard.svg" alt="cv" /></a>
-            <a href="/fun/" title="fun"><img class="footerIcon" src="/assets/icons/party-popper.svg" alt="fun" /></a>
-            <a href="/blog/" title="txt"><img class="footerIcon" src="/assets/icons/pen-line.svg" alt="txt" /></a>
-          </div>
-          <div class="footerLink" style="justify-content: right;">
-            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class='footerBtn'
-              style="text-decoration: none; font-size: 0.9rem; color: #666;">
-              goto top
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+  <br><br>
+
+  <div>
+    <h3><b>Experience</b></h3>
+    <br>
+    <br>
   </div>
+
+  <br><br>
+
+  <div>
+    <h3><b>Publications</b></h3>
+    <br>
+    <div>NeuRIPS, 2024
+    <div><b>MV2CAD: Reverse Engineer CAD from Multi-view Images</b>
+    <div>Eunji Hong, <u>Nguyen Minh Hieu</u>, Mikaela Uy, Minhyuk Sung</div>
+    <br>
+    <div>ICCV, 2023</div>
+    <div><b>SALAD: Part-level latent diffusion for 3D shape generation and manipulation</b></div>
+    <div>Juil Koo*, Seungwoo Yoo*, <u>Nguyen Minh Hieu</u>*, and Minhyuk Sung</div>
+    <div>(* denotes equal contribution)</div>
+  </div>
+
+  <br><br>
+
+  <div>
+    <h3><b>Academic Services</b></h3>
+    <br>
+    <div>CVPR 2026 - Reviewer</div>
+    <div>ICRA 2026 - Reviewer</div>
+  </div>
+
+  <br><br>
+
+  <div>
+  Copyright © 2018-2026 Nguyen Minh Hieu
+  </div>
+
 </body>
-
 </html>

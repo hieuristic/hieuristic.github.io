@@ -1,543 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
-  <title>Charlie's Homepage</title>
-  <meta name="description" content="Welcome to Charlie's Homepage!">
-  <link rel="stylesheet" href="styles/global.css" />
-  <link rel="stylesheet" href="styles/navbar.css" />
-  <link rel="stylesheet" href="styles/footer.css" />
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="styles/home.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hieu's Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KC5SMZ8FY3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'G-KC5SMZ8FY3');
-</script>
-
 <body>
-  <div class="mainCon">
-
-    <!--Main Content-->
-    <div class="contentCon">
-      <div class="indexMain">
-        <div class="top">
-          <div class="left">
-            <div class="socialCon">
-              <a href="javascript:void(0)" class="icon" id="meBtn">
-                <img alt='me-icon' src='assets/icons/user.svg' />
-              </a>
-              <a href="javascript:void(0)" class="icon" id="globeBtn">
-                <img alt='globe-icon' src='assets/icons/globe.svg' />
-              </a>
-            </div>
-
-            <div id="profileContainer" style="display: flex; flex-direction: column; width: 100%;">
-              <div class="profileImage" id="profileSlot">
-                <img src="/assets/images/charlie.webp" alt="me" />
-              </div>
-              <div id="nameSection"
-                style="height: 4rem; display: flex; flex-direction: column; justify-content: center; gap: 0.2rem;">
-                <div id="nameContent"
-                  style="display: flex; flex-direction: column; justify-content: center; gap: 0.2rem;">
-                  <div class="profileName" style="font-weight: 300;">
-                    Nguyen Minh Hieu
-                  </div>
-                  <div class="profileName" style="font-weight: 600; color: var(--col-red); font-style:italic">
-                    "Charlie"
-                  </div>
-                </div>
-                <div id="globeContent"
-                  style="display: none; justify-content: center; align-items: center; height: 100%;">
-                  <a href="/globe" class="profileName" style="font-weight: 300; text-decoration: underline;">
-                    see full page
-                  </a>
-                </div>
-              </div>
-            </div>
-            <script>
-              (function () {
-                const profileSlot = document.getElementById('profileSlot');
-                const nameContent = document.getElementById('nameContent');
-                const globeContent = document.getElementById('globeContent');
-                const originalContent = profileSlot.innerHTML;
-
-                function setMode(isGlobe) {
-                  if (isGlobe) {
-                    profileSlot.innerHTML = `<iframe src="globe/index.html" 
-                      style="width: 100%; height: 100%; border: none; border-radius: 0.6rem; display: block;"
-                      title="Globe demo"
-                      allow="webgpu; geolocation"></iframe>`;
-                    nameContent.style.display = 'none';
-                    globeContent.style.display = 'flex';
-                  } else {
-                    profileSlot.innerHTML = originalContent;
-                    nameContent.style.display = 'flex';
-                    globeContent.style.display = 'none';
-                  }
-                }
-
-                document.getElementById('globeBtn').addEventListener('click', async () => {
-                  if (navigator.gpu) {
-                    try {
-                      const adapter = await navigator.gpu.requestAdapter();
-                      if (adapter) {
-                        setMode(true);
-                      } else {
-                        alert("WebGPU is not supported or enabled in your browser.");
-                      }
-                    } catch (e) {
-                      console.error("WebGPU initialization failed", e);
-                    }
-                  } else {
-                    alert("WebGPU is not supported in this browser.");
-                  }
-                });
-
-                document.getElementById('meBtn').addEventListener('click', () => {
-                  setMode(false);
-                });
-              })();
-            </script>
-          </div>
-          <div class="right">
-            <div class="socialCon">
-              <a href="https://github.com/min-hieu/" class="icon">
-                <img alt='github-icon' src='assets/icons/github.svg' />
-              </a>
-              <a href="https://scholar.google.com/citations?user=w8cjoQkAAAAJ&hl=en" class="icon">
-                <img alt='google-scholar-icon' src='assets/icons/graduation-cap.svg' />
-              </a>
-              <a href="https://letterboxd.com/hieuristics/" class="icon">
-                <img alt='letterboxd-icon' src='assets/icons/clapperboard.svg' />
-              </a>
-            </div>
-            <div class="intro">
-              <!-- <div id="introBtnCon"> -->
-              <!--     <div class="langBtn selected" id="introBtnEn">En</div> -->
-              <!--     / -->
-              <!--     <div class="langBtn" id="introBtnDe">De</div> -->
-              <!--     / -->
-              <!--     <div class="langBtn" id="introBtnVn">Vn</div> -->
-              <!-- </div> -->
-              <div class="para paraIntro selected" id="introEn">
-                Hello!
-                <br>
-                I'm currently a founding engineer at <a href="https://coolant.earth">Coolant</a>, a Spaial AI company
-                based in SF.
-                I obtained my BSc in Computer Science and Electrical Engineering at <a
-                  href="https://kaist.ac.kr/">KAIST</a>.
-                Previously, I was doing research under Professor <a href="https://mhsung.github.io/">Minhyuk Sung</a>
-                at the <a href="https://mhsung.github.io/">Geometric AI Lab</a>.
-                I'm especially interested in geometric optimization problems in
-                3D vision and computer graphics with an emphasis on high-performance and ease-of-use.
-                If you find my skillset useful for your own project, don't hesitate to
-                reach out!
-                <br>
-                <br>
-                My professional interests are often intertwined with my hobbies,
-                where I enjoy painting, hiking, taking
-                <a href='fun/photos'>photographs</a>,
-                <a href='https://www.geocaching.com/play'>geocaching</a>,
-                and contributing to open-source projects!
-                <br>
-                <br>
-                My <a href="https://en.wikipedia.org/wiki/Erd%C5%91s_number">Erdős number</a>
-                is <b>4</b> <br>(Me →
-                <a href="https://63days.github.io/">Juil Koo</a> →
-                <a href="https://en.wikipedia.org/wiki/Leonidas_J._Guibas">Leonidas Guibas</a> →
-                <a href="https://en.wikipedia.org/wiki/Frances_Yao">Frances Yao</a> →
-                <a href="https://en.wikipedia.org/wiki/Paul_Erd%C5%91s">Paul Erdős</a>).
-                <br>
-                <br>
-              </div>
-              <div class="para paraIntro" id="introDe">
-                Hallo!
-                <br>
-                Ich arbeite derzeit als Forschungsingenieur bei <a href="https://netropy.ai">Netropy</a>
-                in Seoul, Südkorea. Meinen B.Sc. in Informatik und Elektrotechnik habe ich an der
-                <a href="https://kaist.ac.kr/">KAIST</a> gemacht. Zuvor habe ich unter Professor
-                <a href="https://mhsung.github.io/">Minhyuk Sung</a> am
-                <a href="https://mhsung.github.io/">Geometric AI Lab</a> geforscht.
-                Ich interessiere mich besonders dafür, Geometrieprobleme in Grafik, Vision und
-                Ingenieurwesen mit einem fundierten und prinzipiengeleiteten Ansatz zu lösen.
-                Wenn meine Fähigkeiten für dein Projekt hilfreich sein könnten, melde dich gerne bei mir!
-                <br>
-                <br>
-                In meiner Freizeit mache ich gerne Malerei, Fotografie, betreibe <a
-                  href="https://www.geocaching.com/play">Geocaching</a> und programmiere!
-                <br>
-                <br>
-                Meine <a href="https://de.wikipedia.org/wiki/Erd%C5%91s-Zahl">Erdős-Zahl</a> ist <b>4</b> (Nguyen Minh
-                Hieu →
-                <a href="https://mhsung.github.io/">Minhyuk Sung</a> →
-                <a href="https://en.wikipedia.org/wiki/Leonidas_J._Guibas">Leonidas Guibas</a> →
-                <a href="https://en.wikipedia.org/wiki/Frances_Yao">Frances Yao</a> →
-                <a href="https://en.wikipedia.org/wiki/Paul_Erd%C5%91s">Paul Erdős</a>).
-                <br>
-                <br>
-              </div>
-              <div class="para paraIntro" id="introVn">
-                Xin chào!
-                <br>
-                Hiện tại, mình là kỹ sư nghiên cứu tại <a href="https://netropy.ai">Netropy</a> ở Seoul, Hàn Quốc.
-                Mình đã hoàn thành bằng Computer Science và Electrical Engineering tại <a
-                  href="https://kaist.ac.kr/">KAIST</a>. Trước đây, mình đã thực hiện nghiên cứu dưới sự hướng dẫn của
-                Giáo sư <a href="https://mhsung.github.io/">Minhyuk Sung</a> tại <a
-                  href="https://mhsung.github.io/">Geometric AI Lab</a>.
-                <br>
-                <br>
-                Số <a href="https://en.wikipedia.org/wiki/Erd%C5%91s_number">Erdős</a> của mình là <b>4</b>
-                (Nguyễn Minh Hiếu → <a href="https://mhsung.github.io/">Minhyuk Sung</a> → <a
-                  href="https://en.wikipedia.org/wiki/Leonidas_J._Guibas">Leonidas Guibas</a> → <a
-                  href="https://en.wikipedia.org/wiki/Frances_Yao">Frances Yao</a> → <a
-                  href="https://en.wikipedia.org/wiki/Paul_Erd%C5%91s">Paul Erdős</a>).
-                <br>
-                <br>
-              </div>
-              <script>
-                for (let i = 0; i < document.getElementsByClassName("langBtn").length; i++) {
-                  let btn = document.getElementsByClassName("langBtn")[i]
-                  btn.addEventListener("click", () => {
-                    let lang = btn.id.split("introBtn")[1]
-                    let introLang = document.getElementById("intro" + lang)
-                    for (let j = 0; j < document.getElementsByClassName("langBtn").length; j++) {
-                      let btn2 = document.getElementsByClassName("langBtn")[j]
-                      btn2.classList.remove("selected")
-                    }
-                    btn.classList.add("selected")
-                    for (let j = 0; j < document.getElementsByClassName("paraIntro").length; j++) {
-                      let para = document.getElementsByClassName("paraIntro")[j]
-                      para.classList.remove("selected")
-                    }
-                    introLang.classList.add("selected")
-                  });
-                }
-              </script>
-            </div>
-            <br>
-
-            <!-- <div class='sectionHeaderCon'> -->
-            <!--   <div class='sectionHeaderTail'></div> -->
-            <!--   <div class='sectionHeader'>News</div> -->
-            <!--   <div class='sectionHeaderHead'></div> -->
-            <!--   <div class='hbuffer'></div> -->
-            <!-- </div> -->
-            <!---->
-            <!-- <div class="shadowCon"> -->
-            <!--   <div class="newsCon"> -->
-            <!--     <div> -->
-            <!--       <div class="newsCard"> -->
-            <!--         <div class="newsDate">21/10/24</div> -->
-            <!--         <div class="newsMid">•</div> -->
-            <!--         <div class="newsTitle"> -->
-            <!--           Joined <a href="https://netropy.ai/">Netropy</a> as a Research Engineer -->
-            <!--         </div> -->
-            <!--       </div> -->
-            <!--       <div class="centerCon"> -->
-            <!--         <div class="div" style="background: #dadada"></div> -->
-            <!--       </div> -->
-            <!--     </div> -->
-            <!--     <div> -->
-            <!--       <div class="newsCard"> -->
-            <!--         <div class="newsDate">23/09/24</div> -->
-            <!--         <div class="newsMid">•</div> -->
-            <!--         <div class="newsTitle"> -->
-            <!--           MV2Cyl got accepted to Neurips 2024! -->
-            <!--         </div> -->
-            <!--       </div> -->
-            <!--       <div class="centerCon"> -->
-            <!--         <div class="div" style="background: #dadada"></div> -->
-            <!--       </div> -->
-            <!--     </div> -->
-            <!--     <div> -->
-            <!--       <div class="newsCard"> -->
-            <!--         <div class="newsDate">15/07/23</div> -->
-            <!--         <div class="newsMid">•</div> -->
-            <!--         <div class="newsTitle"> -->
-            <!--           <a href='https://salad3d.github.io'>SALAD</a> got accepted to ICCV 2023! -->
-            <!--         </div> -->
-            <!--       </div> -->
-            <!--       <div class="centerCon"> -->
-            <!--         <div class="div" style="background: #dadada"></div> -->
-            <!--       </div> -->
-            <!--     </div> -->
-            <!--     <div> -->
-            <!--       <div class="newsCard"> -->
-            <!--         <div class="newsDate">10/06/22</div> -->
-            <!--         <div class="newsMid">•</div> -->
-            <!--         <div class="newsTitle"> -->
-            <!--           Joined KAIST <a href='https://mhsung.github.io/'>Geometric AI Lab</a> as a Student Researcher -->
-            <!--         </div> -->
-            <!--       </div> -->
-            <!--       <div class="centerCon"> -->
-            <!--         <div class="div" style="background: #dadada"></div> -->
-            <!--       </div> -->
-            <!--     </div> -->
-            <!--     <div> -->
-            <!--       <div class="newsCard"> -->
-            <!--         <div class="newsDate">20/12/22</div> -->
-            <!--         <div class="newsMid">•</div> -->
-            <!--         <div class="newsTitle"> -->
-            <!--           Joined IBS <a href='https://ibs.re.kr/ds/'>Data Science Group</a> as a Student Researcher -->
-            <!--         </div> -->
-            <!--       </div> -->
-            <!--       <div class="centerCon"> -->
-            <!--         <div class="div" style="background: #dadada"></div> -->
-            <!--       </div> -->
-            <!--     </div> -->
-            <!--   </div> -->
-            <!-- </div> -->
-          </div>
-        </div>
-        <div class="bottomContent">
-
-          <div class="bufferDiv"></div>
-
-          <div class="sectionTitle">PUBLICATION</div>
-          <div class='bibHeaderNote'>
-            * this is highlighted research, see full list <br><a
-              href="https://scholar.google.com/citations?user=w8cjoQkAAAAJ&hl=en"> here</a>
-          </div>
-        </div>
-
-        <div class="shadowCon">
-          <div class="bibCon">
-            <div class="bibCard">
-              <img alt='mv2cyl-thumbnail' class="bibImage bibImagePad" src="assets/images/publication/mv2cyl.webp" />
-              <div class="bibText">
-                <div class="bibTitle">MV2Cyl: Reconstructing 3D Extrusion Cylinders from Multi-View Images</div>
-                <div class="bibPublish">
-                  <div class="bibPublisher"><i>Neurips, 2024</i></div>
-                </div>
-                <div class="bibAuthor">
-                  <a href="https://www.linkedin.com/in/eunji-hong-15b2a9213">Eunji Hong</a>,
-                  <b>Minh Hieu Nguyen</b>,
-                  <a href='https://mikacuy.github.io/'>Mikaela Angelina Uy</a>, and
-                  <a href='https://mhsung.github.io/'>Minhyuk Sung</a>
-                </div>
-                <div class="bibLinkCon">
-                  <a class="bibLink" href="https://arxiv.org/abs/2303.12236">Arxiv</a>
-                </div>
-              </div>
-            </div>
-            <div class="centerCon">
-              <div class="div" style="background: #dadada"></div>
-            </div>
-            <div class="bibCard">
-              <img alt='salad-thumbnail' class="bibImage bibImagePad" src="assets/images/publication/salad.webp" />
-              <div class="bibText">
-                <div class="bibTitle">SALAD: Part-Level Latent Diffusion for 3D Shape Generation and Manipulation
-                </div>
-                <div class="bibPublish">
-                  <div class="bibPublisher"><i>ICCV, 2023</i></div>
-                </div>
-                <div class="bibAuthor">
-                  <a href='https://63days.github.io/'>Juil Koo*</a>,
-                  <a href='https://dvelopery0115.github.io/'>Seungwoo Yoo*</a>,
-                  <b>Minh Hieu Nguyen*</b>, and
-                  <a href='https://mhsung.github.io/'>Minhyuk Sung</a>
-                  (* equal contribution)
-                </div>
-                <div class="bibLinkCon">
-                  <a class="bibLink" href="https://salad3d.github.io">Project</a>
-                  <a class="bibLink" href="https://github.com/KAIST-Geometric-AI-Group/SALAD">Code</a>
-                  <a class="bibLink" href="https://arxiv.org/abs/2303.12236">Arxiv</a>
-                  <a class="bibLink" href="https://salad3d.github.io/assets/salad.pdf">PDF</a>
-                  <a class="bibLink" href="https://huggingface.co/spaces/KAIST-Geometric-AI-Lab/salad-demo/">Demo</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bufferDiv"></div>
-        <div class="sectionTitle">PROJECT</div>
-        <div class="shadowCon">
-          <div class="bibCon">
-
-            <div class="bibCard">
-              <img alt='digital-aerochrome-thumbnail' class="bibImage"
-                src="assets/images/project/digital-aerochrome.webp" />
-              <div class="bibText">
-                <div class="bibTitle">Digital Aerochrome</div>
-                <div class="bibPublish">
-                  <div class="bibPublisher"><i>2025</i></div>
-                </div>
-                <div class="projDesc">
-                  I modded an Olympus EPL-2 camera to shoot
-                  Aerochrome film digitally!
-                </div>
-                <div class="bibLinkCon">
-                  <a class="bibLink" href="wip.html">(Coming Soon)</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="bibCard">
-              <img alt='vol-rendering-thumbnail' class="bibImage" src="assets/images/project/volume-rendering.webp" />
-              <div class="bibText">
-                <div class="bibTitle">Volume Rendering with WebGL</div>
-                <div class="bibPublish">
-                  <div class="bibPublisher"><i>2024</i></div>
-                </div>
-                <div class="projDesc">
-                  Classical volume rendering technique implemented in WebGL.
-                  This project aims to visualize CT scans.
-                </div>
-                <div class="bibLinkCon">
-                  <a class="bibLink" href="min-volrender">Demo</a>
-                  <a class="bibLink" href="https://github.com/min-hieu/min-volrender">Github</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="centerCon">
-              <div class="div" style="background: #dadada"></div>
-            </div>
-
-            <div class="bibCard">
-              <img alt='ray-marching-thumbnail' class="bibImage" src="assets/images/project/ray-marching.webp" />
-              <div class="bibText">
-                <div class="bibTitle">Ray Marching and SDF Modeling</div>
-                <div class="bibPublish">
-                  <div class="bibPublisher"><i>2024, (Work in Progress)</i></div>
-                </div>
-                <div class="projDesc">
-                  SDF Modeling visualized with Ray Marching via 3D texture.
-                </div>
-                <div class="bibLinkCon">
-                  <a class="bibLink" href="min-tsdfRayMarching">Demo</a>
-                  <a class="bibLink" href="https://github.com/min-hieu/min-tsdfRayMarching">Github</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="centerCon">
-              <div class="div" style="background: #dadada"></div>
-            </div>
-
-            <div class="bibCard">
-              <img alt='geometry-arxiv-thumbnail' class="bibImage" src="assets/images/project/geometry.webp" />
-              <div class="bibText">
-                <div class="bibTitle">Geometry Archive</div>
-                <div class="bibPublish">
-                  <div class="bibPublisher"><i>2023~Present</i></div>
-                </div>
-                <div class="projDesc">
-                  My collection of geometry processing algorithms implemented in C++ and Python.
-                </div>
-                <div class="bibLinkCon">
-                  <a class="bibLink" href="https://github.com/min-hieu/min-geo">Github</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="centerCon">
-              <div class="div" style="background: #dadada"></div>
-            </div>
-
-            <div class="bibCard">
-              <img alt='ml-thumbnail' class="bibImage" src="assets/images/project/ml.webp" />
-              <div class="bibText">
-                <div class="bibTitle">Generative Models Archive</div>
-                <div class="bibPublish">
-                  <div class="bibPublisher"><i>2023~Present</i></div>
-                </div>
-                <div class="projDesc">
-                  My collection of generative models algorithms (mainly diffusion related) implemented in PyTorch
-                  and NumPy.
-                </div>
-                <div class="bibLinkCon">
-                  <a class="bibLink" href="https://github.com/min-hieu/min-diff">Github</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="centerCon">
-              <div class="div" style="background: #dadada"></div>
-            </div>
-            <div class="bibCard">
-              <img alt='shadertoy-thumbnail' class="bibImage" src="assets/images/project/shadertoy.webp" />
-              <div class="bibText">
-                <div class="bibTitle">ShaderToy</div>
-                <div class="bibPublish">
-                  <div class="bibPublisher"><i>2022~Present</i></div>
-                </div>
-                <div class="projDesc">
-                  My collection of ShaderToy's. I'm working on porting these into
-                  this web page soon!
-                </div>
-                <div class="bibLinkCon">
-                  <a class="bibLink" href="https://www.shadertoy.com/user/minHieu">Profile</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
+  <div>
+    <h3><b>Nguyen Minh Hieu</b></h3>
   </div>
-  <!--Main Content End-->
-
-  <!--Navbar-->
-  <div class="navBar">
-    <div class="navCon">
-      <div class="navBg"></div>
-      <div class="navBtnCon">
-        <a rel="prefetch" href="/" class='navBtn active'>
-          me
-        </a>
-        <a rel="prefetch" href="/cv.html" class='navBtn'>
-          cv
-        </a>
-        <a rel="prefetch" href="/fun/" class='navBtn'>
-          fun
-        </a>
-        <a rel="prefetch" href="/blog/" class='navBtn'>
-          txt
-        </a>
-      </div>
-    </div>
+  <div>
+    Software Engineer specialized in 3D Vision and Computer Graphics
   </div>
-  <!--Navbar End-->
+  <br>
+
+  <div>
+    I got my BSc from KAIST in Computer Science and Electrical Engineering.
+    <br>
+    I worked in 3D Reconstruction and Visualization.
+  </div>
+  <br>
+
+  <div>
+    My <a href="https://en.wikipedia.org/wiki/Erdős_number">Erdős Number</a> is 4 <br>
+    (Me → Juil Koo → Leonidas Guibas → Frances Yao → Paul Erdős).
+  </div>
+  <br>
+
+  <div>
+    my resume <a href="/cv.html">here</a>
+  </div>
+  <div>
+    my photos <a href="">here</a>
+  </div>
+  <div>
+    my blogs <a href="">here</a>
+  </div>
+  <div>
+    my graphics demos <a href="">here</a>
+  </div>
+  <br>
+
+  <div>
+    email: hieu1052k3 [[at]] gmail.com
+  </div>
+  <div>
+    github: <a href="https://github.com/hieuristic">https://github.com/hieuristic</a>
+  </div>
+  <div>
+    google scholar: <a href="https://scholar.google.com/citations?user=w8cjoQkAAAAJ&hl=en">https://scholar.google.com/citations?user=w8cjoQkAAAAJ&hl=en</a>
+  </div>
+  <div>
+    letterboxd: <a href="https://letterboxd.com/hieuristics/">https://letterboxd.com/hieuristics/</a>
   </div>
 
-  <!--Footer -->
-  <div class="footer">
-    <div class="footerMainCon">
-      <div class="footerCon">
-        <div class="fLeft">
-          Copyright © 2018-2026 <br> Nguyen Minh Hieu
-        </div>
-        <div class="footerRight">
-          <div class="footerLink">
-            <a href="/" title="me"><img class="footerIcon" src="/assets/icons/user.svg" alt="me" /></a>
-            <a href="/cv.html" title="cv"><img class="footerIcon" src="/assets/icons/clipboard.svg" alt="cv" /></a>
-            <a href="/fun/" title="fun"><img class="footerIcon" src="/assets/icons/party-popper.svg" alt="fun" /></a>
-            <a href="/blog/" title="txt"><img class="footerIcon" src="/assets/icons/pen-line.svg" alt="txt" /></a>
-          </div>
-          <div class="footerLink" style="justify-content: right;">
-            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class='footerBtn'
-              style="text-decoration: none; font-size: 0.9rem; color: #666;">
-              goto top
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+  <br><br>
+
+  <div>
+  Copyright © 2018-2026 Nguyen Minh Hieu
   </div>
-  <!--Footer End-->
+
 </body>
-
 </html>
