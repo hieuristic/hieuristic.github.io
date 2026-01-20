@@ -13,6 +13,7 @@
 *.jpeg
 *.png
 *.PNG
+!foto/**/*.jpg
 !copyright.png
 !globe/assets/*.avif
 !globe/assets/*.svg
