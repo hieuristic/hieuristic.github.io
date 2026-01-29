@@ -15,11 +15,23 @@
       }
       .entry {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        color: black;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 0;
+        text-decoration: none;
+      }
+      .entry:hover {
+        background: black;
+        color: white;
+        text-decoration: none;
       }
       .filsym {
         width: 1.0rem;
         text-align: center;
+      }
+      .date {
+        color: #a9a9a9;
       }
     </style>
 </head>
@@ -36,12 +48,16 @@
   <br><br>
 
   <div id="entry_container">
-  <div class="entry tech">
-      <div class="filsym">•</div>
-      <div class="date">28.01.2026</div>
-      <div class="filsym">|</div>
-      <div class="title">init</div>
+    <a class="entry tech" href="001_vocab.html">
+      <div class="date">01.2026</div>
+      <div class="title">Rethinking a Hyperfocused Flashcard</div>
+    </a>
   </div>
+  <div id="entry_container">
+    <a class="entry" href="000_init.html">
+      <div class="date">00.0000</div>
+      <div class="title">init</div>
+    </a>
   </div>
 
   <br><br>
