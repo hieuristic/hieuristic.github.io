@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>init</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {
+              delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+              ]
+            });"></script>
+  <style>
+    .imgframe {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .imgframe img {
+      max-width: 80%;
+    }
+  </style>
+</head>
+
+<body>
+  <div><a href="/blog">◀ back</a></div>
+  <br>
+  <div>
+    <h3><b>Rethinking a Hyperfocused Flashcard</b></h3>
+    <br>
+    <u>All content</u> is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">CC BY-NC
+      4.0</a>
+  </div>
+  <br><br>
+  tl;dr checkout the <a href="/flashrecall">FlashRecall</a>.
+  <br><br>
+  <h4>The Problem</h4>
+  <br>
+  Recently, I've been learning German and have found the experience of absorbing new vocabulary
+  fairly frustrating. While German has a steep learning curve when it comes to vocab, I've found that most,
+  if not all, currently available apps lack the thoughtful design needed for effective learning.
+  <br><br>
+  Searching for "learn German" right now on the app store presents you with two options:
+  context-based app and repetition-based app.
+  <br><br>
+  Context-based apps like Duolingo try to introduce vocabulary in the context of daily speech or following certain
+  themes. While
+  these offer a more engaging experience, I find them very slow, and sometimes the methods used
+  can be distracting (e.g., the mini-games in Duolingo).
+  <br><br>
+  On the other hand, flashcard apps like Anki allow users to create flashcards they can use to
+  quickly review large amounts of vocabulary. However, the presentation of vocabulary is completely
+  random and not based on how useful the words actually are.
+  The ability to see and use a word as soon as you learn it is very powerful, in that it not only
+  deepens your memory of that word, but also helps you understand its meaning and its connection to other
+  words, thus strengthening your overall vocabulary skills.
+  <br><br>
+  I want something that allows me to learn vocabulary at a steady pace in a way that lets me immediately recognize words
+  in daily
+  conversations or books, without being too slow. The first app that somewhat worked is
+  <a href="https://linguico.com/">Linguico</a>, which shows, in flashcard style, German
+  and even some Swiss-German vocabulary sorted by frequency in natural language use. This allows
+  the user to acquire the most useful vocab in the most streamlined way possible. But the downside with
+  this app and many other flashcard apps is that they are completely passive and require
+  the user to manually specify the difficulty of words.
+  <br><br>
+  <div class="imgframe">
+    <img src="" alt="linguico screenshot"></img>
+    <div class="imgdesc">A screenshot from the Linguico app</div>
+  </div>
+  <br>
+  Above is an example from the vocab training section of Linguico. For every word, the user
+  has to classify it as hard, medium, or easy. Hard words are then repeated many times
+  within a session and will appear more often in later review sessions. Medium and easy words
+  progressively have fewer repetitions and are also less likely to show up in
+  later review sessions. This is a flawed mechanism because: 1. It is very passive 2. Users can't make accurate
+  judgments
+  about how difficult a word is 3. It's very punishing if the user makes a wrong assessment.
+  <br><br>
+  So, what can we learn from this?
+  <br><br><br>
+  <h4>My Solution</h4>
+  <br>
+  Here are the principles that guide my solution:
+  <br><br>
+  1. Leverage spaced repetition
+  <br>
+  2. Show words based on their frequency of use
+  <br>
+  3. Present words <b>in context</b> with example sentences
+  <br>
+  4. Require active input from the user
+  <br>
+  5. Personalize the review experience
+  <br>
+  6. Eliminate manual difficulty ranking
+  <br>
+  7. Create a tight feedback loop (<a href="https://youtu.be/M7eUE5ReCVQ?si=tJPnRH3fFs0H6XIi&t=278">Success Is Not About
+    Trying Hard</a>)
+  <br><br>
+  Of these principles, the seventh is the most subtle yet critical.
+  Context-based apps are slow at teaching vocabulary because their feedback loops are fragmented across
+  different modes and exercises. Even within each exercise, the number of words shown is very limited.
+  Similarly, Linguico's constant self-assessment prompts break the learning flow and prevent users from having more
+  practice trials.
+  <br><br>
+  So, I've created a flashcard app that displays English words with example
+  sentences showing their usage in context. Users must type out the German translation. Words are
+  prioritized using a ranking algorithm that combines three factors: the word's usefulness, its frequency
+  in natural language, and the severity of any previous mistakes the user made with that word.
+  <br><br><br><br>
+  <div>
+    Copyright © 2018-2026 Nguyen Minh Hieu
+  </div>
+</body>
+
+</html>

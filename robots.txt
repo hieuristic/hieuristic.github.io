@@ -1,0 +1,3 @@
+# GET OFF MY SITE, CLANKER!
+User-agent: *
+Disallow: /

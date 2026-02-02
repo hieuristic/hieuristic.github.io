@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hieu_foto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .collage {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(32px, 1fr));
+            gap: 5px;
+            margin-top: 20px;
+        }
+        .collage img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            cursor: pointer;
+            transition: border 0.1s;
+            border: 1px solid transparent;
+        }
+        .collage img:hover {
+            border: 1px solid #0066cc;
+        }
+        #viewer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .viewer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 95%;
+            max-height: 95%;
+        }
+        #viewer-img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        #viewer-close {
+            margin-bottom: 10px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            color: #1a1a1a;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+    </style>
+</head>
+<body>
+  <div><a href="/">◀ back</a></div>
+  <br>
+  <div>
+    <h3><b>Hieu's Dithered Gallery</b></h3>
+    <br>
+    <u>All content</u>  are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">CC BY-NC 4.0</a>
+    <br>
+    My dithering code <a href="https://github.com/hieuristic/ditherme">here</a>
+  </div>
+
+  <div class="collage">
+      <img src="tmb/000000.jpg" onclick="openImage('img/000000.jpg')">
+      <img src="tmb/000001.jpg" onclick="openImage('img/000001.jpg')">
+      <img src="tmb/000002.jpg" onclick="openImage('img/000002.jpg')">
+      <img src="tmb/000003.jpg" onclick="openImage('img/000003.jpg')">
+      <img src="tmb/000004.jpg" onclick="openImage('img/000004.jpg')">
+      <img src="tmb/000005.jpg" onclick="openImage('img/000005.jpg')">
+      <img src="tmb/000006.jpg" onclick="openImage('img/000006.jpg')">
+      <img src="tmb/000007.jpg" onclick="openImage('img/000007.jpg')">
+      <img src="tmb/000008.jpg" onclick="openImage('img/000008.jpg')">
+      <img src="tmb/000009.jpg" onclick="openImage('img/000009.jpg')">
+      <img src="tmb/000010.jpg" onclick="openImage('img/000010.jpg')">
+      <img src="tmb/000011.jpg" onclick="openImage('img/000011.jpg')">
+      <img src="tmb/000012.jpg" onclick="openImage('img/000012.jpg')">
+      <img src="tmb/000013.jpg" onclick="openImage('img/000013.jpg')">
+      <img src="tmb/000014.jpg" onclick="openImage('img/000014.jpg')">
+      <img src="tmb/000015.jpg" onclick="openImage('img/000015.jpg')">
+      <img src="tmb/000016.jpg" onclick="openImage('img/000016.jpg')">
+      <img src="tmb/000017.jpg" onclick="openImage('img/000017.jpg')">
+      <img src="tmb/000018.jpg" onclick="openImage('img/000018.jpg')">
+      <img src="tmb/000019.jpg" onclick="openImage('img/000019.jpg')">
+      <img src="tmb/000020.jpg" onclick="openImage('img/000020.jpg')">
+      <img src="tmb/000021.jpg" onclick="openImage('img/000021.jpg')">
+      <img src="tmb/000022.jpg" onclick="openImage('img/000022.jpg')">
+      <img src="tmb/000023.jpg" onclick="openImage('img/000023.jpg')">
+      <img src="tmb/000024.jpg" onclick="openImage('img/000024.jpg')">
+      <img src="tmb/000025.jpg" onclick="openImage('img/000025.jpg')">
+      <img src="tmb/000026.jpg" onclick="openImage('img/000026.jpg')">
+      <img src="tmb/000027.jpg" onclick="openImage('img/000027.jpg')">
+      <img src="tmb/000028.jpg" onclick="openImage('img/000028.jpg')">
+      <img src="tmb/000029.jpg" onclick="openImage('img/000029.jpg')">
+      <img src="tmb/000030.jpg" onclick="openImage('img/000030.jpg')">
+      <img src="tmb/000031.jpg" onclick="openImage('img/000031.jpg')">
+      <img src="tmb/000032.jpg" onclick="openImage('img/000032.jpg')">
+      <img src="tmb/000033.jpg" onclick="openImage('img/000033.jpg')">
+      <img src="tmb/000034.jpg" onclick="openImage('img/000034.jpg')">
+      <img src="tmb/000035.jpg" onclick="openImage('img/000035.jpg')">
+      <img src="tmb/000036.jpg" onclick="openImage('img/000036.jpg')">
+      <img src="tmb/000037.jpg" onclick="openImage('img/000037.jpg')">
+      <img src="tmb/000038.jpg" onclick="openImage('img/000038.jpg')">
+      <img src="tmb/000039.jpg" onclick="openImage('img/000039.jpg')">
+      <img src="tmb/000040.jpg" onclick="openImage('img/000040.jpg')">
+      <img src="tmb/000041.jpg" onclick="openImage('img/000041.jpg')">
+      <img src="tmb/000042.jpg" onclick="openImage('img/000042.jpg')">
+  </div>
+
+  <div id="viewer" onclick="closeImage()">
+      <div class="viewer-container">
+          <span id="viewer-close">◀ back</span>
+          <img id="viewer-img" src="" alt="">
+      </div>
+  </div>
+
+  <br><br>
+  <div>
+    Copyright © 2018-2026 Nguyen Minh Hieu
+  </div>
+
+  <script>
+      function openImage(src) {
+          document.getElementById('viewer-img').src = src;
+          document.getElementById('viewer').style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+      }
+      function closeImage() {
+          document.getElementById('viewer').style.display = 'none';
+          document.body.style.overflow = 'auto';
+      }
+  </script>
+</body>
+</html>

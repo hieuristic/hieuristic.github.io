@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hieu_foto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+      #filter_btn {
+        width: 8.5rem;
+        color: #0066cc;
+      }
+      .entry {
+        display: flex;
+        flex-direction: column;
+        color: black;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 0;
+        text-decoration: none;
+      }
+      .entry:hover {
+        background: black;
+        color: white;
+        text-decoration: none;
+      }
+      .filsym {
+        width: 1.0rem;
+        text-align: center;
+      }
+      .date {
+        color: #a9a9a9;
+      }
+    </style>
+</head>
+<body>
+  <div><a href="/">◀ back</a></div>
+  <br>
+  <div>
+    <h3><b>Hieu's Blog</b></h3>
+    <br>
+    <u>All content</u>  are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">CC BY-NC 4.0</a>
+  </div>
+  <br>
+  <div id="filter_btn">is_technical: off</div>
+  <br><br>
+
+  <div id="entry_container">
+    <a class="entry tech" href="001_vocab.html">
+      <div class="date">01.2026</div>
+      <div class="title">Rethinking a Hyperfocused Flashcard</div>
+    </a>
+  </div>
+  <div id="entry_container">
+    <a class="entry" href="000_init.html">
+      <div class="date">00.0000</div>
+      <div class="title">init</div>
+    </a>
+  </div>
+
+  <br><br>
+  <div>
+    Copyright © 2018-2026 Nguyen Minh Hieu
+  </div>
+  <script>
+    const filterBtn = document.getElementById('filter_btn');
+    filterBtn.style.cursor = 'pointer';
+
+    filterBtn.addEventListener('click', () => {
+      const isTechnical = filterBtn.innerText.includes('off');
+      filterBtn.innerText = isTechnical ? 'is_technical: on' : 'is_technical: off';
+      filterBtn.style.backgroundColor = isTechnical ? 'black' : '';
+      filterBtn.style.color = isTechnical ? 'white' : '';
+
+      const entries = document.querySelectorAll('#entry_container .entry');
+      entries.forEach(entry => {
+        if (isTechnical && !entry.classList.contains('tech')) {
+          entry.style.display = 'none';
+        } else {
+          entry.style.display = '';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
