@@ -1,3 +1,9 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 # GET OFF MY SITE, CLANKER!
 User-agent: *
 Disallow: /
