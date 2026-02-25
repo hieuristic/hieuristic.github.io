@@ -4,6 +4,9 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: DuckDuckBot
+Allow: /
+
 # GET OFF MY SITE, CLANKER!
 User-agent: *
 Disallow: /
