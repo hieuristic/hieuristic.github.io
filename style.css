@@ -13,7 +13,7 @@
 body {
     /* font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace; */
     font-family: 'akkurat';
-    font-size: 0.8rem;
+    font-size: 1.0rem;
     line-height: 1.5;
     padding: 2rem;
     max-width: 800px;
